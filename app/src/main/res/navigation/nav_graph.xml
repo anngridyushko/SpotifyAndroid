@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authFragment">
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.spotidroidapp.fragment.AuthFragment"
+        tools:layout="@layout/fragment_auth" >
+        <action
+            android:id="@+id/action_toMain"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.spotidroidapp.fragment.MainFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_songListFragment"
+            app:destination="@id/songListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.spotidroidapp.fragment.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.example.spotidroidapp.fragment.LibraryFragment"
+        android:label="@string/library"
+        tools:layout="@layout/fragment_library" />
+    <fragment
+        android:id="@+id/songListFragment"
+        android:name="com.example.spotidroidapp.fragment.SongListFragment"
+        android:label="@string/genre_songs">
+        <argument
+            android:name="genre"
+            app:argType="com.example.spotidroidapp.model.Genre" />
+    </fragment>
+</navigation>
