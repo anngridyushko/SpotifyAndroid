@@ -1,6 +1,5 @@
 package com.example.spotidroidapp.ui.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.spotidroidapp.model.Genre
 import com.example.spotidroidapp.model.Song
@@ -8,7 +7,6 @@ import com.example.spotidroidapp.model.SongRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class GenreSongViewModel(private val repository: SongRepository, genre: Genre? = null): ViewModel() {
     private val _selected = MutableLiveData<Genre?>()

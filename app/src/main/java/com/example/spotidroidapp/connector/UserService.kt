@@ -9,9 +9,6 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.VolleyError
 import org.json.JSONObject
-import com.google.gson.annotations.JsonAdapter
-import com.squareup.moshi.Moshi
-
 
 class UserService(
     private val mqueue: RequestQueue,

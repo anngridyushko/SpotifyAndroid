@@ -2,8 +2,6 @@ package com.example.spotidroidapp.model
 
 import com.example.spotidroidapp.spotiapi.SpotiApi
 import com.example.spotidroidapp.spotiapi.SpotiApiService
-import com.google.gson.Gson
-import retrofit2.awaitResponse
 
 class SongRepository(val token: String) {
     var client: SpotiApiService = SpotiApi(token).retrofitService

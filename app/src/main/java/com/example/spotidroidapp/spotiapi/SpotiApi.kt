@@ -1,29 +1,14 @@
 package com.example.spotidroidapp.spotiapi
 
-import android.content.Context
-import android.content.SharedPreferences
+
 import com.example.spotidroidapp.model.Genres
 import com.example.spotidroidapp.model.Song
-import com.google.gson.JsonObject
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import okhttp3.Interceptor
-
 import okhttp3.OkHttpClient
-import okhttp3.Request
-import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.*
-import com.google.gson.GsonBuilder
-
-import com.google.gson.Gson
-import okhttp3.Response
-
 
 private const val BASE_URL = "https://api.spotify.com/v1/"
 

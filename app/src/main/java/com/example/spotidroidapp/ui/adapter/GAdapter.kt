@@ -4,10 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.example.spotidroidapp.databinding.GenresCardBinding
 import com.example.spotidroidapp.model.Genre
-import com.example.spotidroidapp.model.Genres
 import com.example.spotidroidapp.ui.listener.OnGenreClickListener
 import com.example.spotidroidapp.ui.viewholder.GenreViewHolder
 

@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.graphics.Color.argb
 import android.graphics.drawable.ColorDrawable
 import android.widget.ImageView
-import androidx.annotation.ColorInt
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.spotidroidapp.databinding.GenresCardBinding

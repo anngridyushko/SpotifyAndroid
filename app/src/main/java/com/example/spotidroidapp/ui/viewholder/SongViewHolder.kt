@@ -1,23 +1,16 @@
 package com.example.spotidroidapp.ui.viewholder
 
-import android.graphics.Color
-import android.graphics.Color.argb
-import android.graphics.drawable.ColorDrawable
-import android.view.View
+
 import android.widget.CheckBox
 import android.widget.ImageView
-import androidx.annotation.ColorInt
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.spotidroidapp.R
-import com.example.spotidroidapp.databinding.GenresCardBinding
 import com.example.spotidroidapp.databinding.SongCardBinding
-import com.example.spotidroidapp.model.Genre
 import com.example.spotidroidapp.model.Song
-import kotlin.random.Random
 
 class SongViewHolder(private val binding: SongCardBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
