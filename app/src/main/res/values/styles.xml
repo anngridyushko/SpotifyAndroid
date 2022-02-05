@@ -1,7 +1,6 @@
 <resources>
 
     <style name="Widget.Theme.Spotidroid.ButtonBar.Fullscreen" parent="Theme.MaterialComponents.Light.NoActionBar">
-
     </style>
     <style name="SensibleDefaultsMaterialCard" parent="Widget.MaterialComponents.CardView">
         <item name="android:layout_marginLeft">10dp</item>
@@ -12,6 +11,18 @@
     <style name="CustomCHeckbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:button">@drawable/like_selector</item>
     </style>
+    <style name="ToolBarTheme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="elevation">2dp</item>
+        <item name="android:background">?colorPrimaryDark</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+
+    </style>
+    <style name="CustomTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <item name="android:fontFamily">@font/inter_extrabold</item>
+    <item name="android:textSize">24sp</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textStyle">bold</item>
+</style>
 
 
 </resources>

@@ -10,19 +10,20 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/my_toolbar"
+        style="@style/ToolBarTheme"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#00FFFFFF"
         android:elevation="4dp"
         android:pointerIcon="none"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:collapseIcon="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@android:color/transparent"
         app:navigationIconTint="#00FFFFFF"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextAppearance="@style/CustomTitleTextAppearance"
+        app:titleTextColor="@color/white" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
