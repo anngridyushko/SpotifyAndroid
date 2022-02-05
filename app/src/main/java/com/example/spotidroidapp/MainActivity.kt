@@ -20,19 +20,16 @@ import com.spotify.android.appremote.api.SpotifyAppRemote
 import com.spotify.sdk.android.auth.AuthorizationClient
 import com.spotify.sdk.android.auth.AuthorizationRequest
 import com.spotify.sdk.android.auth.AuthorizationResponse
-import com.spotify.sdk.android.auth.AuthorizationResponse.Type
-
 
 
 class MainActivity : AppCompatActivity() {
-
 
     private var bottomNav: BottomNavigationView? = null
     var mSpotifyAppRemote: SpotifyAppRemote? = null
 
     private val CLIENT_ID = "e313f45636e943e19f6edc2787533423"
     private val REDIRECT_URI = "spotidroidapp://callback"
-    private val SCOPES = "user-library-read"
+    private val SCOPES = "user-library-read,user-read-recently-played,user-library-modify,user-read-email,user-read-private"
     private val REQUEST_CODE = 1133
 
     private var msPreferences: SharedPreferences? = null
@@ -52,15 +49,13 @@ class MainActivity : AppCompatActivity() {
             object : Connector.ConnectionListener {
                 override fun onConnected(spotifyAppRemote: SpotifyAppRemote) {
                     mSpotifyAppRemote = spotifyAppRemote
-                    Log.d("MainActivity", "Connected! Yay!")
+                    Log.d("MainActivity", "Spotify remote connected")
                 }
 
                 override fun onFailure(throwable: Throwable) {
                     Log.e("MainActivity", throwable.message, throwable)
                 }
             })
-
-
 
     }
 
@@ -73,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             AuthorizationRequest.Builder(CLIENT_ID, AuthorizationResponse.Type.TOKEN, REDIRECT_URI)
         builder.setScopes(arrayOf(SCOPES))
         val request = builder.build()
-        Log.i("Authh", "Trying to log in")
+        Log.i("MainActivity", "Trying to log in")
         AuthorizationClient.openLoginActivity(this, REQUEST_CODE, request);
 
 
@@ -90,35 +85,12 @@ class MainActivity : AppCompatActivity() {
                     editor = getSharedPreferences("SPOTIFY", 0)?.edit()
                     editor?.putString("token", response.accessToken)
                     editor?.apply()
-                    Log.i("Auth", "Connected")
+                    Log.i("MainActivity", "Connected")
                     waitForUserInfo()
                 }
                 AuthorizationResponse.Type.ERROR -> {
 
 
-                }
-                else -> {
-                }
-            }
-        }
-    }
-
-
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-        val uri = intent!!.data
-        if(uri != null) {
-            val response = AuthorizationResponse.fromUri(uri)
-
-            when (response.type) {
-                AuthorizationResponse.Type.TOKEN -> {
-                    editor = getSharedPreferences("SPOTIFY", 0)?.edit()
-                    editor?.putString("token", response.accessToken)
-                    editor?.apply()
-                    Log.i("Auth", "Connected")
-                    waitForUserInfo()
-                }
-                AuthorizationResponse.Type.ERROR -> {
                 }
                 else -> {
                 }
@@ -135,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                 editor?.putString("userid", user?.id)
                 editor?.commit()
                 val action = AuthFragmentDirections.actionToMain()
-                Log.i("Authh", getSharedPreferences("SPOTIFY", 0)?.getString("token", "")!!
+                Log.i("MainActivity", getSharedPreferences("SPOTIFY", 0)?.getString("token", "")!!
                 )
                 val navHostFragment =
                     supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
