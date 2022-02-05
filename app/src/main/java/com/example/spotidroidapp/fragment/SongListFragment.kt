@@ -18,6 +18,8 @@ import com.example.spotidroidapp.ui.adapters.SongAdapter
 import com.example.spotidroidapp.ui.listener.OnSongClickListener
 import com.example.spotidroidapp.ui.viewmodel.GenreSongViewModel
 import com.example.spotidroidapp.ui.viewmodel.GenreSongViewModelFactory
+import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.launch
 
 class SongListFragment : Fragment(R.layout.fragment_songlist), OnSongClickListener {
@@ -29,10 +31,11 @@ class SongListFragment : Fragment(R.layout.fragment_songlist), OnSongClickListen
 
     private lateinit var viewModel: GenreSongViewModel
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         genre = args.genre
-        (activity as AppCompatActivity?)!!.actionBar?.title = genre.name
+        activity?.findViewById<MaterialToolbar>(R.id.my_toolbar)?.title = genre.name
         token = activity?.getSharedPreferences("SPOTIFY", 0)?.getString("token", "")!!
         viewModel = GenreSongViewModelFactory(SongRepository(token), genre).create(GenreSongViewModel::class.java)
 

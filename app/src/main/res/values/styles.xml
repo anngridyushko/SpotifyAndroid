@@ -1,8 +1,7 @@
 <resources>
 
-    <style name="Widget.Theme.Spotidroid.ButtonBar.Fullscreen" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    <style name="Widget.Theme.Spotidroid.ButtonBar.Fullscreen" parent="Theme.MaterialComponents.Light.NoActionBar">
+
     </style>
     <style name="SensibleDefaultsMaterialCard" parent="Widget.MaterialComponents.CardView">
         <item name="android:layout_marginLeft">10dp</item>
